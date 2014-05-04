@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		91D02C221916B4CA00B6671D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D02C211916B4CA00B6671D /* Cocoa.framework */; };
+		91D02C241916B4CA00B6671D /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D02C231916B4CA00B6671D /* SpriteKit.framework */; };
+		91D02C2E1916B4CA00B6671D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91D02C2C1916B4CA00B6671D /* InfoPlist.strings */; };
+		91D02C301916B4CA00B6671D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D02C2F1916B4CA00B6671D /* main.m */; };
+		91D02C341916B4CA00B6671D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 91D02C321916B4CA00B6671D /* Credits.rtf */; };
+		91D02C361916B4CA00B6671D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91D02C351916B4CA00B6671D /* MainMenu.xib */; };
+		91D02C381916B4CA00B6671D /* SpriteMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D02C371916B4CA00B6671D /* SpriteMyScene.m */; };
+		91D02C3B1916B4CA00B6671D /* SpriteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D02C3A1916B4CA00B6671D /* SpriteAppDelegate.m */; };
+		91D02C3E1916B4CA00B6671D /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D02C3D1916B4CA00B6671D /* Spaceship.png */; };
+		91D02C401916B4CA00B6671D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91D02C3F1916B4CA00B6671D /* Images.xcassets */; };
+		91D02C471916B4CA00B6671D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D02C461916B4CA00B6671D /* XCTest.framework */; };
+		91D02C481916B4CA00B6671D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D02C211916B4CA00B6671D /* Cocoa.framework */; };
+		91D02C501916B4CA00B6671D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91D02C4E1916B4CA00B6671D /* InfoPlist.strings */; };
+		91D02C521916B4CA00B6671D /* SpaceAdventureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D02C511916B4CA00B6671D /* SpaceAdventureTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		91D02C491916B4CA00B6671D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91D02C161916B4CA00B6671D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91D02C1D1916B4CA00B6671D;
+			remoteInfo = SpaceAdventure;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		91D02C1E1916B4CA00B6671D /* SpaceAdventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceAdventure.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		91D02C211916B4CA00B6671D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		91D02C231916B4CA00B6671D /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		91D02C261916B4CA00B6671D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		91D02C271916B4CA00B6671D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		91D02C281916B4CA00B6671D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		91D02C2B1916B4CA00B6671D /* SpaceAdventure-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpaceAdventure-Info.plist"; sourceTree = "<group>"; };
+		91D02C2D1916B4CA00B6671D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		91D02C2F1916B4CA00B6671D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		91D02C311916B4CA00B6671D /* SpaceAdventure-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpaceAdventure-Prefix.pch"; sourceTree = "<group>"; };
+		91D02C331916B4CA00B6671D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		91D02C351916B4CA00B6671D /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		91D02C371916B4CA00B6671D /* SpriteMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpriteMyScene.m; sourceTree = "<group>"; };
+		91D02C391916B4CA00B6671D /* SpriteMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpriteMyScene.h; sourceTree = "<group>"; };
+		91D02C3A1916B4CA00B6671D /* SpriteAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpriteAppDelegate.m; sourceTree = "<group>"; };
+		91D02C3C1916B4CA00B6671D /* SpriteAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpriteAppDelegate.h; sourceTree = "<group>"; };
+		91D02C3D1916B4CA00B6671D /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		91D02C3F1916B4CA00B6671D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		91D02C451916B4CA00B6671D /* SpaceAdventureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceAdventureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		91D02C461916B4CA00B6671D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		91D02C4D1916B4CA00B6671D /* SpaceAdventureTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpaceAdventureTests-Info.plist"; sourceTree = "<group>"; };
+		91D02C4F1916B4CA00B6671D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		91D02C511916B4CA00B6671D /* SpaceAdventureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceAdventureTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		91D02C1B1916B4CA00B6671D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91D02C241916B4CA00B6671D /* SpriteKit.framework in Frameworks */,
+				91D02C221916B4CA00B6671D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91D02C421916B4CA00B6671D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91D02C481916B4CA00B6671D /* Cocoa.framework in Frameworks */,
+				91D02C471916B4CA00B6671D /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		91D02C151916B4CA00B6671D = {
+			isa = PBXGroup;
+			children = (
+				91D02C291916B4CA00B6671D /* SpaceAdventure */,
+				91D02C4B1916B4CA00B6671D /* SpaceAdventureTests */,
+				91D02C201916B4CA00B6671D /* Frameworks */,
+				91D02C1F1916B4CA00B6671D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		91D02C1F1916B4CA00B6671D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91D02C1E1916B4CA00B6671D /* SpaceAdventure.app */,
+				91D02C451916B4CA00B6671D /* SpaceAdventureTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91D02C201916B4CA00B6671D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91D02C211916B4CA00B6671D /* Cocoa.framework */,
+				91D02C231916B4CA00B6671D /* SpriteKit.framework */,
+				91D02C461916B4CA00B6671D /* XCTest.framework */,
+				91D02C251916B4CA00B6671D /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		91D02C251916B4CA00B6671D /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91D02C261916B4CA00B6671D /* AppKit.framework */,
+				91D02C271916B4CA00B6671D /* CoreData.framework */,
+				91D02C281916B4CA00B6671D /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		91D02C291916B4CA00B6671D /* SpaceAdventure */ = {
+			isa = PBXGroup;
+			children = (
+				91D02C351916B4CA00B6671D /* MainMenu.xib */,
+				91D02C371916B4CA00B6671D /* SpriteMyScene.m */,
+				91D02C391916B4CA00B6671D /* SpriteMyScene.h */,
+				91D02C3A1916B4CA00B6671D /* SpriteAppDelegate.m */,
+				91D02C3C1916B4CA00B6671D /* SpriteAppDelegate.h */,
+				91D02C3D1916B4CA00B6671D /* Spaceship.png */,
+				91D02C3F1916B4CA00B6671D /* Images.xcassets */,
+				91D02C2A1916B4CA00B6671D /* Supporting Files */,
+			);
+			path = SpaceAdventure;
+			sourceTree = "<group>";
+		};
+		91D02C2A1916B4CA00B6671D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				91D02C2B1916B4CA00B6671D /* SpaceAdventure-Info.plist */,
+				91D02C2C1916B4CA00B6671D /* InfoPlist.strings */,
+				91D02C2F1916B4CA00B6671D /* main.m */,
+				91D02C311916B4CA00B6671D /* SpaceAdventure-Prefix.pch */,
+				91D02C321916B4CA00B6671D /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		91D02C4B1916B4CA00B6671D /* SpaceAdventureTests */ = {
+			isa = PBXGroup;
+			children = (
+				91D02C511916B4CA00B6671D /* SpaceAdventureTests.m */,
+				91D02C4C1916B4CA00B6671D /* Supporting Files */,
+			);
+			path = SpaceAdventureTests;
+			sourceTree = "<group>";
+		};
+		91D02C4C1916B4CA00B6671D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				91D02C4D1916B4CA00B6671D /* SpaceAdventureTests-Info.plist */,
+				91D02C4E1916B4CA00B6671D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		91D02C1D1916B4CA00B6671D /* SpaceAdventure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91D02C551916B4CA00B6671D /* Build configuration list for PBXNativeTarget "SpaceAdventure" */;
+			buildPhases = (
+				91D02C1A1916B4CA00B6671D /* Sources */,
+				91D02C1B1916B4CA00B6671D /* Frameworks */,
+				91D02C1C1916B4CA00B6671D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpaceAdventure;
+			productName = SpaceAdventure;
+			productReference = 91D02C1E1916B4CA00B6671D /* SpaceAdventure.app */;
+			productType = "com.apple.product-type.application";
+		};
+		91D02C441916B4CA00B6671D /* SpaceAdventureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91D02C581916B4CA00B6671D /* Build configuration list for PBXNativeTarget "SpaceAdventureTests" */;
+			buildPhases = (
+				91D02C411916B4CA00B6671D /* Sources */,
+				91D02C421916B4CA00B6671D /* Frameworks */,
+				91D02C431916B4CA00B6671D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91D02C4A1916B4CA00B6671D /* PBXTargetDependency */,
+			);
+			name = SpaceAdventureTests;
+			productName = SpaceAdventureTests;
+			productReference = 91D02C451916B4CA00B6671D /* SpaceAdventureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		91D02C161916B4CA00B6671D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Sprite;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Andy;
+				TargetAttributes = {
+					91D02C441916B4CA00B6671D = {
+						TestTargetID = 91D02C1D1916B4CA00B6671D;
+					};
+				};
+			};
+			buildConfigurationList = 91D02C191916B4CA00B6671D /* Build configuration list for PBXProject "SpaceAdventure" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 91D02C151916B4CA00B6671D;
+			productRefGroup = 91D02C1F1916B4CA00B6671D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				91D02C1D1916B4CA00B6671D /* SpaceAdventure */,
+				91D02C441916B4CA00B6671D /* SpaceAdventureTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		91D02C1C1916B4CA00B6671D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91D02C3E1916B4CA00B6671D /* Spaceship.png in Resources */,
+				91D02C401916B4CA00B6671D /* Images.xcassets in Resources */,
+				91D02C2E1916B4CA00B6671D /* InfoPlist.strings in Resources */,
+				91D02C341916B4CA00B6671D /* Credits.rtf in Resources */,
+				91D02C361916B4CA00B6671D /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91D02C431916B4CA00B6671D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91D02C501916B4CA00B6671D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		91D02C1A1916B4CA00B6671D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91D02C301916B4CA00B6671D /* main.m in Sources */,
+				91D02C3B1916B4CA00B6671D /* SpriteAppDelegate.m in Sources */,
+				91D02C381916B4CA00B6671D /* SpriteMyScene.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91D02C411916B4CA00B6671D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91D02C521916B4CA00B6671D /* SpaceAdventureTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		91D02C4A1916B4CA00B6671D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91D02C1D1916B4CA00B6671D /* SpaceAdventure */;
+			targetProxy = 91D02C491916B4CA00B6671D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		91D02C2C1916B4CA00B6671D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91D02C2D1916B4CA00B6671D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		91D02C321916B4CA00B6671D /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91D02C331916B4CA00B6671D /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		91D02C4E1916B4CA00B6671D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91D02C4F1916B4CA00B6671D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		91D02C531916B4CA00B6671D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		91D02C541916B4CA00B6671D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		91D02C561916B4CA00B6671D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpaceAdventure/SpaceAdventure-Prefix.pch";
+				INFOPLIST_FILE = "SpaceAdventure/SpaceAdventure-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		91D02C571916B4CA00B6671D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpaceAdventure/SpaceAdventure-Prefix.pch";
+				INFOPLIST_FILE = "SpaceAdventure/SpaceAdventure-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		91D02C591916B4CA00B6671D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpaceAdventure.app/Contents/MacOS/SpaceAdventure";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpaceAdventure/SpaceAdventure-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SpaceAdventureTests/SpaceAdventureTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		91D02C5A1916B4CA00B6671D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpaceAdventure.app/Contents/MacOS/SpaceAdventure";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpaceAdventure/SpaceAdventure-Prefix.pch";
+				INFOPLIST_FILE = "SpaceAdventureTests/SpaceAdventureTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		91D02C191916B4CA00B6671D /* Build configuration list for PBXProject "SpaceAdventure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91D02C531916B4CA00B6671D /* Debug */,
+				91D02C541916B4CA00B6671D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91D02C551916B4CA00B6671D /* Build configuration list for PBXNativeTarget "SpaceAdventure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91D02C561916B4CA00B6671D /* Debug */,
+				91D02C571916B4CA00B6671D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		91D02C581916B4CA00B6671D /* Build configuration list for PBXNativeTarget "SpaceAdventureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91D02C591916B4CA00B6671D /* Debug */,
+				91D02C5A1916B4CA00B6671D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 91D02C161916B4CA00B6671D /* Project object */;
+}
