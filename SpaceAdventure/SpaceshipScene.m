@@ -15,6 +15,9 @@
 @property (nonatomic) BOOL moveRight;
 @property (nonatomic) BOOL moveBack;
 @property (nonatomic) BOOL fireAction;
+
+@property (nonatomic, strong) NSArray * backgrounds;
+
 @end
 
 @implementation SpaceshipScene
@@ -33,18 +36,13 @@
 {
     self.backgroundColor = [SKColor blackColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
-    
-    //adding the background
-    SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"StarBackground"];
-//    background.anchorPoint = CGPointZero;
-    background.position = CGPointMake(background.size.width/2, background.size.height/2);
-    background.scale = 10;
-    background.name = @"background";
+
+    SKSpriteNode *background = [self newBackground];
     [self addChild:background];
     
-    
     SKSpriteNode *spaceship = [self newSpaceship];
-    spaceship.position = CGPointMake(CGRectGetMidX(self.frame),                              CGRectGetMidY(self.frame)-300);
+    spaceship.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame)-300);
+    spaceship.zPosition = 100;
     [self addChild:spaceship];
 }
 
@@ -59,6 +57,17 @@
     
     return light;
 }
+
+- (SKSpriteNode *)newBackground {
+    SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"StarBackground"];
+    background.position = CGPointMake(background.size.width/2, background.size.height/2);
+    background.zPosition = 1;
+    background.scale = 5;
+    background.name = @"background";
+    NSLog(@"create a background");
+    return background;
+}
+
 
 - (SKSpriteNode *)newSpaceship {
 //    SKSpriteNode *hull = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
@@ -115,6 +124,7 @@
 - (void)keyUp:(NSEvent *)event {
     [self handleKeyEvent:event keyDown:NO];
 }
+
 - (void)handleKeyEvent:(NSEvent *)event keyDown:(BOOL)downOrUp {
     // Now check the rest of the keyboard
     NSString *characters = [event characters];
@@ -143,15 +153,19 @@
 
 - (void)scrollBackground {
     SKNode *background = [self childNodeWithName:@"background"];
-    background.position = CGPointMake(background.position.x, background.position.y -1);
+    background.position = CGPointMake(background.position.x, background.position.y -10);
+    if (background.position.y < 0) {
+        NSLog(@"remove a background");
+
+        [background removeFromParent];
+        [self addChild:[self newBackground]];
+    }
 }
 
 
 - (void)update:(NSTimeInterval)currentTime {
     [self move];
     [self scrollBackground];
-
-
 }
 
 @end
