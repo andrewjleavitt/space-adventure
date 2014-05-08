@@ -24,6 +24,7 @@
 		91D02C501916B4CA00B6671D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91D02C4E1916B4CA00B6671D /* InfoPlist.strings */; };
 		91D02C521916B4CA00B6671D /* SpaceAdventureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D02C511916B4CA00B6671D /* SpaceAdventureTests.m */; };
 		971FE9D8191C2ED600B7DF45 /* StarBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 971FE9D7191C2ED600B7DF45 /* StarBackground.jpg */; };
+		971FE9DC191C4F7400B7DF45 /* Sprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FE9DB191C4F7400B7DF45 /* Sprite.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		91D02C4F1916B4CA00B6671D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		91D02C511916B4CA00B6671D /* SpaceAdventureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceAdventureTests.m; sourceTree = "<group>"; };
 		971FE9D7191C2ED600B7DF45 /* StarBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = StarBackground.jpg; sourceTree = "<group>"; };
+		971FE9DA191C4F7400B7DF45 /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sprite.h; sourceTree = "<group>"; };
+		971FE9DB191C4F7400B7DF45 /* Sprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sprite.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				91D02C391916B4CA00B6671D /* TitleScene.h */,
 				91CBE1BF1919D81F00AB2607 /* SpaceshipScene.h */,
 				91CBE1C01919D81F00AB2607 /* SpaceshipScene.m */,
+				971FE9DA191C4F7400B7DF45 /* Sprite.h */,
+				971FE9DB191C4F7400B7DF45 /* Sprite.m */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				971FE9DC191C4F7400B7DF45 /* Sprite.m in Sources */,
 				91D02C301916B4CA00B6671D /* main.m in Sources */,
 				91CBE1C11919D81F00AB2607 /* SpaceshipScene.m in Sources */,
 				91D02C3B1916B4CA00B6671D /* SpriteAppDelegate.m in Sources */,

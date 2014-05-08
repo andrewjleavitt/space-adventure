@@ -60,9 +60,10 @@
 
 - (SKSpriteNode *)newBackground {
     SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"StarBackground"];
-    background.position = CGPointMake(background.size.width/2, background.size.height/2);
+    background.position = CGPointMake(background.size.width, background.size.height);
     background.zPosition = 1;
-    background.scale = 5;
+    background.scale = 1;
+    background.anchorPoint = CGPointZero;
     background.name = @"background";
     NSLog(@"create a background");
     return background;
