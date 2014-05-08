@@ -23,6 +23,7 @@
 		91D02C481916B4CA00B6671D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D02C211916B4CA00B6671D /* Cocoa.framework */; };
 		91D02C501916B4CA00B6671D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91D02C4E1916B4CA00B6671D /* InfoPlist.strings */; };
 		91D02C521916B4CA00B6671D /* SpaceAdventureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D02C511916B4CA00B6671D /* SpaceAdventureTests.m */; };
+		971FE9D8191C2ED600B7DF45 /* StarBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 971FE9D7191C2ED600B7DF45 /* StarBackground.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		91D02C4D1916B4CA00B6671D /* SpaceAdventureTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpaceAdventureTests-Info.plist"; sourceTree = "<group>"; };
 		91D02C4F1916B4CA00B6671D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		91D02C511916B4CA00B6671D /* SpaceAdventureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceAdventureTests.m; sourceTree = "<group>"; };
+		971FE9D7191C2ED600B7DF45 /* StarBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = StarBackground.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				91D02C391916B4CA00B6671D /* TitleScene.h */,
 				91CBE1BF1919D81F00AB2607 /* SpaceshipScene.h */,
 				91CBE1C01919D81F00AB2607 /* SpaceshipScene.m */,
+				971FE9D7191C2ED600B7DF45 /* StarBackground.jpg */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				91D02C3E1916B4CA00B6671D /* Spaceship.png in Resources */,
 				91D02C401916B4CA00B6671D /* Images.xcassets in Resources */,
 				91D02C2E1916B4CA00B6671D /* InfoPlist.strings in Resources */,
+				971FE9D8191C2ED600B7DF45 /* StarBackground.jpg in Resources */,
 				91D02C341916B4CA00B6671D /* Credits.rtf in Resources */,
 				91D02C361916B4CA00B6671D /* MainMenu.xib in Resources */,
 			);
