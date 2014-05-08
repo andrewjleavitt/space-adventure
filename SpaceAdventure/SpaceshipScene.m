@@ -34,6 +34,15 @@
     self.backgroundColor = [SKColor blackColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
     
+    //adding the background
+    for(int i=0;i<3;i++) {
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"StarBackground"];
+        background.anchorPoint = CGPointZero;
+        background.position = CGPointMake(i * background.size.width, 0);
+        [self addChild:background];
+    }
+    
+    
     SKSpriteNode *spaceship = [self newSpaceship];
     spaceship.position = CGPointMake(CGRectGetMidX(self.frame),                              CGRectGetMidY(self.frame)-300);
     [self addChild:spaceship];
