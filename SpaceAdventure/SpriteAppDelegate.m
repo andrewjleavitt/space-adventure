@@ -7,7 +7,7 @@
 //
 
 #import "SpriteAppDelegate.h"
-#import "SpriteMyScene.h"
+#import "TitleScene.h"
 
 @implementation SpriteAppDelegate
 
@@ -16,12 +16,12 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     /* Pick a size for the scene */
-    SKScene *scene = [SpriteMyScene sceneWithSize:CGSizeMake(1024, 768)];
+    SKScene *title = [TitleScene sceneWithSize:CGSizeMake(1024, 768)];
 
     /* Set the scale mode to scale to fit the window */
-    scene.scaleMode = SKSceneScaleModeAspectFit;
+    title.scaleMode = SKSceneScaleModeAspectFit;
 
-    [self.skView presentScene:scene];
+    [self.skView presentScene:title];
 
     self.skView.showsFPS = YES;
     self.skView.showsNodeCount = YES;
