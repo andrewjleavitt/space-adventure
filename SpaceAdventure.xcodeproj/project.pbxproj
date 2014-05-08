@@ -94,7 +94,6 @@
 				91D02C391916B4CA00B6671D /* TitleScene.h */,
 				91CBE1BF1919D81F00AB2607 /* SpaceshipScene.h */,
 				91CBE1C01919D81F00AB2607 /* SpaceshipScene.m */,
-				971FE9D7191C2ED600B7DF45 /* StarBackground.jpg */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -149,12 +148,12 @@
 		91D02C291916B4CA00B6671D /* SpaceAdventure */ = {
 			isa = PBXGroup;
 			children = (
+				971FE9D9191C3A5B00B7DF45 /* Assets */,
 				91CBE1C81919EF4500AB2607 /* Sprites */,
 				91D02C351916B4CA00B6671D /* MainMenu.xib */,
 				91CBE1C31919E91500AB2607 /* Scene */,
 				91D02C3A1916B4CA00B6671D /* SpriteAppDelegate.m */,
 				91D02C3C1916B4CA00B6671D /* SpriteAppDelegate.h */,
-				91D02C3D1916B4CA00B6671D /* Spaceship.png */,
 				91D02C3F1916B4CA00B6671D /* Images.xcassets */,
 				91D02C2A1916B4CA00B6671D /* Supporting Files */,
 			);
@@ -189,6 +188,15 @@
 				91D02C4E1916B4CA00B6671D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		971FE9D9191C3A5B00B7DF45 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				971FE9D7191C2ED600B7DF45 /* StarBackground.jpg */,
+				91D02C3D1916B4CA00B6671D /* Spaceship.png */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
