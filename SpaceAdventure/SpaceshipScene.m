@@ -52,22 +52,24 @@
 }
 
 - (SKSpriteNode *)newSpaceship {
-    SKSpriteNode *hull = [[SKSpriteNode alloc] initWithColor:[SKColor grayColor] size:CGSizeMake(64, 32)];
-    SKSpriteNode *light1 = [self newLight];
-    light1.position = CGPointMake(-28.0, 6.0);
-    [hull addChild:light1];
-    
-    SKSpriteNode *light1b = [self newLight];
-    light1b.position = CGPointMake(-28.0, -6.0);
-    [hull addChild:light1b];
-    
-    SKSpriteNode *light2 = [self newLight];
-    light2.position = CGPointMake(28.0, 6.0);
-    [hull addChild:light2];
-    
-    SKSpriteNode *light2b = [self newLight];
-    light2b.position = CGPointMake(28.0, -6.0);
-    [hull addChild:light2b];
+//    SKSpriteNode *hull = [[SKSpriteNode alloc] initWithColor:[SKColor grayColor] size:CGSizeMake(64, 32)];
+    SKSpriteNode *hull = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
+    hull.scale = 0.25;
+//    SKSpriteNode *light1 = [self newLight];
+//    light1.position = CGPointMake(-28.0, 6.0);
+//    [hull addChild:light1];
+//    
+//    SKSpriteNode *light1b = [self newLight];
+//    light1b.position = CGPointMake(-28.0, -6.0);
+//    [hull addChild:light1b];
+//    
+//    SKSpriteNode *light2 = [self newLight];
+//    light2.position = CGPointMake(28.0, 6.0);
+//    [hull addChild:light2];
+//    
+//    SKSpriteNode *light2b = [self newLight];
+//    light2b.position = CGPointMake(28.0, -6.0);
+//    [hull addChild:light2b];
     hull.name = @"hull";
     return hull;
 }
