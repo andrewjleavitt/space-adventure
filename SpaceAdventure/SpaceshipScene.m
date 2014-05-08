@@ -35,12 +35,12 @@
     self.scaleMode = SKSceneScaleModeAspectFit;
     
     //adding the background
-    for(int i=0;i<3;i++) {
-        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"StarBackground"];
-        background.anchorPoint = CGPointZero;
-        background.position = CGPointMake(i * background.size.width, 0);
-        [self addChild:background];
-    }
+    SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"StarBackground"];
+//    background.anchorPoint = CGPointZero;
+    background.position = CGPointMake(background.size.width/2, background.size.height/2);
+    background.scale = 10;
+    background.name = @"background";
+    [self addChild:background];
     
     
     SKSpriteNode *spaceship = [self newSpaceship];
@@ -61,9 +61,9 @@
 }
 
 - (SKSpriteNode *)newSpaceship {
-    SKSpriteNode *hull = [[SKSpriteNode alloc] initWithColor:[SKColor grayColor] size:CGSizeMake(64, 32)];
 //    SKSpriteNode *hull = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
 //    hull.scale = 0.25;
+    SKSpriteNode *hull = [[SKSpriteNode alloc] initWithColor:[SKColor grayColor] size:CGSizeMake(64, 32)];
     SKSpriteNode *light1 = [self newLight];
     light1.position = CGPointMake(-28.0, 6.0);
     [hull addChild:light1];
@@ -141,9 +141,15 @@
     }
 }
 
+- (void)scrollBackground {
+    SKNode *background = [self childNodeWithName:@"background"];
+    background.position = CGPointMake(background.position.x, background.position.y -1);
+}
+
 
 - (void)update:(NSTimeInterval)currentTime {
     [self move];
+    [self scrollBackground];
 
 
 }
