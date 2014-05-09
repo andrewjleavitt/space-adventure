@@ -40,6 +40,8 @@
 
 - (SKSpriteNode *)newZombie {
     SKSpriteNode *zombie = [SKSpriteNode spriteNodeWithImageNamed:@"Zombie"];
+    zombie.anchorPoint = CGPointZero;
+    zombie.scale = 0.5;
     zombie.position = CGPointMake(CGRectGetMidX(self.frame), 0);
     return zombie;
 }
@@ -58,8 +60,7 @@
             SKScene *spaceshipScene = [[SpaceshipScene alloc] initWithSize:self.size];
             SKTransition *doors = [SKTransition doorsOpenVerticalWithDuration:0.5];
             [self.view presentScene:spaceshipScene transition:doors];
-            }];
-                                  
+        }];
     }
 }
 

@@ -19,6 +19,7 @@
 @property (nonatomic) SKSpriteNode* spaceship;
 @property (nonatomic) SKSpriteNode* bg1;
 @property (nonatomic) SKSpriteNode* bg2;
+@property (nonatomic) NSNumber* scrollSpeed;
 
 @end
 
@@ -33,6 +34,7 @@
 }
 
 - (void)createSceneContents {
+    [self setScrollSpeed: [NSNumber 2.0]];
     self.backgroundColor = [SKColor blackColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
     self.anchorPoint = CGPointMake(0.5, 0.5);
@@ -41,12 +43,12 @@
     [self setBg2:[self newBackground]];
     
     self.bg1.anchorPoint = CGPointZero;
-    self.bg1.position = CGPointMake(0, 0);
+    self.bg1.position = CGPointMake(-512, 0);
     self.bg1.name = @"bg1";
     [self addChild:self.bg1];
 
     self.bg2.anchorPoint = CGPointZero;
-    self.bg2.position = CGPointMake(0, self.bg1.size.height - 1);
+    self.bg2.position = CGPointMake(-512, self.bg1.size.height - 1);
     self.bg2.name = @"bg2";
     [self addChild:self.bg2];
     
@@ -69,29 +71,29 @@
 }
 
 - (SKSpriteNode *)newSpaceship {
-//    SKSpriteNode *hull = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-//    hull.scale = 0.25;
-    SKSpriteNode *hull = [[SKSpriteNode alloc] initWithColor:[SKColor grayColor] size:CGSizeMake(64, 64)];
-    SKSpriteNode *light1 = [self newLight];
-    light1.position = CGPointMake(-28.0, 6.0);
-    [hull addChild:light1];
-    
-    SKSpriteNode *light1b = [self newLight];
-    light1b.position = CGPointMake(-28.0, -6.0);
-    [hull addChild:light1b];
-    
-    SKSpriteNode *light2 = [self newLight];
-    light2.position = CGPointMake(28.0, 6.0);
-    [hull addChild:light2];
-    
-    SKSpriteNode *light2b = [self newLight];
-    light2b.position = CGPointMake(28.0, -6.0);
-    [hull addChild:light2b];
+    SKSpriteNode *hull = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
+    hull.scale = 0.25;
+//    SKSpriteNode *hull = [[SKSpriteNode alloc] initWithColor:[SKColor grayColor] size:CGSizeMake(64, 64)];
+//    SKSpriteNode *light1 = [self newLight];
+//    light1.position = CGPointMake(-28.0, 6.0);
+//    [hull addChild:light1];
+//    
+//    SKSpriteNode *light1b = [self newLight];
+//    light1b.position = CGPointMake(-28.0, -6.0);
+//    [hull addChild:light1b];
+//    
+//    SKSpriteNode *light2 = [self newLight];
+//    light2.position = CGPointMake(28.0, 6.0);
+//    [hull addChild:light2];
+//    
+//    SKSpriteNode *light2b = [self newLight];
+//    light2b.position = CGPointMake(28.0, -6.0);
+//    [hull addChild:light2b];
     hull.name = @"hull";
     return hull;
 }
 
-- (void)move {
+- (void)movePlayer {
     SKAction *action = nil;
     // Build up the movement action.
     if(self.moveForward == YES) {
@@ -149,27 +151,28 @@
 }
 
 - (SKSpriteNode *)newBackground {
-    SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"StarBackground"];
+    SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"StarMap4"];
     background.zPosition = 1;
-    background.scale = 5;
+    background.scale = 1;
     NSLog(@"create a background");
     return background;
 }
 
 - (void)scrollBackground {
-    self.bg1.position = CGPointMake(self.bg1.position.x, self.bg1.position.y - 4);
-    self.bg2.position = CGPointMake(self.bg2.position.x, self.bg2.position.y - 4);
+    [self setScrollSpeed:self.scrollSpeed * 1.25];
+    self.bg1.position = CGPointMake(self.bg1.position.x, self.bg1.position.y - self.scrollSpeed);
+    self.bg2.position = CGPointMake(self.bg2.position.x, self.bg2.position.y - (2+(1.5/6)));
     
-    if(self.bg1.position.y < -self.bg1.size.height) {
+    if(self.bg1.position.y < -self.bg1.size.height - self.bg1.size.height/2) {
         self.bg1.position = CGPointMake(self.bg1.position.x, self.bg2.size.height + self.bg2.position.y);
     }
-    if(self.bg2.position.y < -self.bg2.size.height) {
+    if(self.bg2.position.y < -self.bg2.size.height - self.bg2.size.height/2) {
         self.bg2.position = CGPointMake(self.bg2.position.x, self.bg1.size.height + self.bg1.position.y);
     }
 }
 
 - (void)update:(NSTimeInterval)currentTime {
-    [self move];
+    [self movePlayer];
     [self scrollBackground];
 }
 
