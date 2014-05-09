@@ -16,34 +16,44 @@
 @property (nonatomic) BOOL moveBack;
 @property (nonatomic) BOOL fireAction;
 
-@property (nonatomic, strong) NSArray * backgrounds;
+@property (nonatomic) SKSpriteNode* spaceship;
+@property (nonatomic) SKSpriteNode* bg1;
+@property (nonatomic) SKSpriteNode* bg2;
 
 @end
 
 @implementation SpaceshipScene
 
 
-- (void)didMoveToView:(SKView *)view
-{
-    if (!self.contentCreated)
-    {
+- (void)didMoveToView:(SKView *)view {
+    if (!self.contentCreated) {
         [self createSceneContents];
         self.contentCreated = YES;
     }
 }
 
-- (void)createSceneContents
-{
+- (void)createSceneContents {
     self.backgroundColor = [SKColor blackColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
-
-    SKSpriteNode *background = [self newBackground];
-    [self addChild:background];
+    self.anchorPoint = CGPointMake(0.5, 0.5);
     
-    SKSpriteNode *spaceship = [self newSpaceship];
-    spaceship.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame)-300);
-    spaceship.zPosition = 100;
-    [self addChild:spaceship];
+    [self setBg1:[self newBackground]];
+    [self setBg2:[self newBackground]];
+    
+    self.bg1.anchorPoint = CGPointZero;
+    self.bg1.position = CGPointMake(0, 0);
+    self.bg1.name = @"bg1";
+    [self addChild:self.bg1];
+
+    self.bg2.anchorPoint = CGPointZero;
+    self.bg2.position = CGPointMake(0, self.bg1.size.height - 1);
+    self.bg2.name = @"bg2";
+    [self addChild:self.bg2];
+    
+    [self setSpaceship:[self newSpaceship]];
+    self.spaceship.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame)-300);
+    self.spaceship.zPosition = 100;
+    [self addChild:self.spaceship];
 }
 
 - (SKSpriteNode *) newLight {
@@ -57,18 +67,6 @@
     
     return light;
 }
-
-- (SKSpriteNode *)newBackground {
-    SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"StarBackground"];
-    background.position = CGPointMake(background.size.width, background.size.height);
-    background.zPosition = 1;
-    background.scale = 1;
-    background.anchorPoint = CGPointZero;
-    background.name = @"background";
-    NSLog(@"create a background");
-    return background;
-}
-
 
 - (SKSpriteNode *)newSpaceship {
 //    SKSpriteNode *hull = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
@@ -95,7 +93,6 @@
 
 
 - (void)move {
-    SKNode *spaceShip = [self childNodeWithName:@"hull"];
     SKAction *action = nil;
     // Build up the movement action.
     if(self.moveForward == YES) {
@@ -113,7 +110,7 @@
     
     // Play the resulting action.
     if (action) {
-        [spaceShip runAction:action];
+        [self.spaceship runAction:action];
     }
 }
 
@@ -152,17 +149,25 @@
     }
 }
 
-- (void)scrollBackground {
-    SKNode *background = [self childNodeWithName:@"background"];
-    background.position = CGPointMake(background.position.x, background.position.y -10);
-    if (background.position.y < 0) {
-        NSLog(@"remove a background");
-
-        [background removeFromParent];
-        [self addChild:[self newBackground]];
-    }
+- (SKSpriteNode *)newBackground {
+    SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"StarBackground"];
+    background.zPosition = 1;
+    background.scale = 5;
+    NSLog(@"create a background");
+    return background;
 }
 
+- (void)scrollBackground {
+    self.bg1.position = CGPointMake(self.bg1.position.x, self.bg1.position.y - 4);
+    self.bg2.position = CGPointMake(self.bg2.position.x, self.bg2.position.y - 4);
+    
+    if(self.bg1.position.y < -self.bg1.size.height) {
+        self.bg1.position = CGPointMake(self.bg1.position.x, self.bg2.size.height + self.bg2.position.y);
+    }
+    if(self.bg2.position.y < -self.bg2.size.height) {
+        self.bg2.position = CGPointMake(self.bg2.position.x, self.bg1.size.height + self.bg1.position.y);
+    }
+}
 
 - (void)update:(NSTimeInterval)currentTime {
     [self move];

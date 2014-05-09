@@ -29,7 +29,7 @@
 }
 
 - (SKLabelNode *)newTitleNode {
-    SKLabelNode *titleNode = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+    SKLabelNode *titleNode = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Bold"];
     titleNode.name = @"titleNode";
     titleNode.text = @"Space Adventure!";
     titleNode.fontSize = 42;
