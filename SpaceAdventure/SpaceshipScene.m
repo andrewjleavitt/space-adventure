@@ -71,7 +71,7 @@
 - (SKSpriteNode *)newSpaceship {
 //    SKSpriteNode *hull = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
 //    hull.scale = 0.25;
-    SKSpriteNode *hull = [[SKSpriteNode alloc] initWithColor:[SKColor grayColor] size:CGSizeMake(64, 32)];
+    SKSpriteNode *hull = [[SKSpriteNode alloc] initWithColor:[SKColor grayColor] size:CGSizeMake(64, 64)];
     SKSpriteNode *light1 = [self newLight];
     light1.position = CGPointMake(-28.0, 6.0);
     [hull addChild:light1];
@@ -90,7 +90,6 @@
     hull.name = @"hull";
     return hull;
 }
-
 
 - (void)move {
     SKAction *action = nil;

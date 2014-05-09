@@ -26,15 +26,22 @@
     self.backgroundColor = [SKColor blueColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
     [self addChild:[self newTitleNode]];
+    [self addChild:[self newZombie]];
 }
 
 - (SKLabelNode *)newTitleNode {
-    SKLabelNode *titleNode = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Bold"];
+    SKLabelNode *titleNode = [SKLabelNode labelNodeWithFontNamed:@"Zapfino"];
     titleNode.name = @"titleNode";
     titleNode.text = @"Space Adventure!";
     titleNode.fontSize = 42;
     titleNode.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
     return titleNode;
+}
+
+- (SKSpriteNode *)newZombie {
+    SKSpriteNode *zombie = [SKSpriteNode spriteNodeWithImageNamed:@"Zombie"];
+    zombie.position = CGPointMake(CGRectGetMidX(self.frame), 0);
+    return zombie;
 }
 
 - (void)mouseDown:(NSEvent *)theEvent {
