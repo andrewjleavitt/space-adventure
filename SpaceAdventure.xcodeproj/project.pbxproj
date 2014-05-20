@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91831D3119286D440053917A /* StarField.m in Sources */ = {isa = PBXBuildFile; fileRef = 91831D3019286D440053917A /* StarField.m */; };
+		91C02F3C191EBC6700715633 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C02F3B191EBC6700715633 /* Player.m */; };
 		91CBE1C11919D81F00AB2607 /* SpaceshipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CBE1C01919D81F00AB2607 /* SpaceshipScene.m */; };
 		91CBE1C21919D81F00AB2607 /* SpaceshipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CBE1C01919D81F00AB2607 /* SpaceshipScene.m */; };
 		91D02C221916B4CA00B6671D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D02C211916B4CA00B6671D /* Cocoa.framework */; };
@@ -41,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91831D2F19286D440053917A /* StarField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarField.h; sourceTree = "<group>"; };
+		91831D3019286D440053917A /* StarField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarField.m; sourceTree = "<group>"; };
+		91C02F3A191EBC6700715633 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		91C02F3B191EBC6700715633 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		91CBE1BF1919D81F00AB2607 /* SpaceshipScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceshipScene.h; sourceTree = "<group>"; };
 		91CBE1C01919D81F00AB2607 /* SpaceshipScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceshipScene.m; sourceTree = "<group>"; };
 		91D02C1E1916B4CA00B6671D /* SpaceAdventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceAdventure.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +116,10 @@
 		91CBE1C81919EF4500AB2607 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				91831D2F19286D440053917A /* StarField.h */,
+				91831D3019286D440053917A /* StarField.m */,
+				91C02F3A191EBC6700715633 /* Player.h */,
+				91C02F3B191EBC6700715633 /* Player.m */,
 			);
 			name = Sprites;
 			sourceTree = "<group>";
@@ -315,10 +325,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91831D3119286D440053917A /* StarField.m in Sources */,
 				91D02C301916B4CA00B6671D /* main.m in Sources */,
 				91CBE1C11919D81F00AB2607 /* SpaceshipScene.m in Sources */,
 				91D02C3B1916B4CA00B6671D /* SpriteAppDelegate.m in Sources */,
 				91D02C381916B4CA00B6671D /* TitleScene.m in Sources */,
+				91C02F3C191EBC6700715633 /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

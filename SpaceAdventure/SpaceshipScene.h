@@ -11,5 +11,4 @@
 #define kMinTimeInterval (1.0f / 60.0f)
 
 @interface SpaceshipScene : SKScene
-
 @end
