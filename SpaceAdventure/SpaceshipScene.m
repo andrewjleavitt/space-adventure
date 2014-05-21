@@ -98,6 +98,25 @@
     return hull;
 }
 
+- (SKSpriteNode *) newEnemySpaceShip {
+    SKSpriteNode *enemyHull = [[SKSpriteNode alloc] initWithColor:[SKColor redColor] size:CGSizeMake(64, 16)];
+
+    SKSpriteNode *gunl = [[SKSpriteNode alloc] initWithColor:[SKColor whiteColor] size:CGSizeMake(8, 24)];
+    SKSpriteNode *gunr = [[SKSpriteNode alloc] initWithColor:[SKColor whiteColor] size:CGSizeMake(8, 24)];
+    
+    gunl.position = CGPointMake(-32, 8);
+    gunr.position = CGPointMake(32, 8);
+    
+    [enemyHull addChild:gunl];
+    [enemyHull addChild:gunr];
+    
+    enemyHull.name = @"enemyHull";
+    enemyHull.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:enemyHull.size];
+    enemyHull.physicsBody.dynamic = NO;
+    
+    return enemyHull;
+}
+
 - (SKSpriteNode *) newMissile {
     SKSpriteNode *missile = [[SKSpriteNode alloc] initWithColor:[SKColor redColor] size:CGSizeMake(8, 24)];
     return missile;
@@ -167,6 +186,51 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
                                  
 }
 
+- (void) dropThing {
+    u_int32_t dice = arc4random_uniform(100);
+    if (dice < 15) {
+        [self dropEnemyShip];
+    } else {
+        [self dropAsteroid];
+    }
+    
+}
+
+- (void) dropEnemyShip {
+    CGFloat sideSize = 30;
+    CGFloat startX = arc4random_uniform(self.size.width - 40) + 20;
+    CGFloat startY = self.size.height + sideSize;
+    
+    SKSpriteNode *enemy = [self newEnemySpaceShip];
+//    enemy.size = CGSizeMake(sideSize, sideSize);
+    enemy.position = CGPointMake(startX, startY);
+    enemy.name = @"enemy";
+    [self addChild:enemy];
+    
+    CGPathRef shipPath = [self buildEnemyShipMovementPath];
+    SKAction *followPath = [SKAction followPath:shipPath asOffset:YES orientToPath:YES duration:7];
+    SKAction *remove = [SKAction removeFromParent];
+    SKAction *all = [SKAction sequence:@[followPath, remove]];
+    [enemy runAction:all];
+}
+
+- (CGPathRef)buildEnemyShipMovementPath
+{
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathMoveToPoint(path, NULL,0.5, -0.5);
+    CGPathAddCurveToPoint(path, NULL, 0.5,-0.5 , 4.55, -29.48, -2.5, -59.5);
+    CGPathAddCurveToPoint(path, NULL, -9.55,-89.525 , -43.32, -115.43, -27.5, -154.5);
+    CGPathAddCurveToPoint(path, NULL, -11.68, -193.57, 17.28, -186.95, 30.5, -243.5);
+    CGPathAddCurveToPoint(path, NULL, 43.72, -300.05, -47.71, -335.76,-52.5, -379.5);
+    CGPathAddCurveToPoint(path, NULL, -57.29, -423.24, 4.55,-8.14, -482.45, -449.5);
+    CGPathAddCurveToPoint(path, NULL, 117.14, -416.55, 52.25, -308.62,-5.5, -348.5);
+    CGPathAddCurveToPoint(path, NULL, -63.25, -388.38, -14.48, -457.43,10.5, -494.5);
+    CGPathAddCurveToPoint(path, NULL, 23.74, -514.16, 6.93, -537.57, 0.5, -559.5);
+    CGPathAddCurveToPoint(path, NULL, -5.2, -578.93, -2.5, -644.5, -2.5, -644.5);
+    CGPathAddCurveToPoint(path, NULL, 0.5,-0.5 , 4.55, -29.48, -2.5, -59.5);
+
+    return path;
+}
 
 - (void) shoot {
     SKSpriteNode *missile = [self newMissile];
@@ -193,9 +257,6 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     }
     if(self.moveRight == YES) {
         action = [SKAction moveByX:10 y:0 duration:0.1];
-    }
-    if(self.fireAction == YES) {
-        [self shoot];
     }
     
     // Play the resulting action.
@@ -264,7 +325,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 - (void) checkCollisions {
     
     [self enumerateChildNodesWithName:@"rock" usingBlock:^(SKNode *rock, BOOL *stop) {
-        // player death
+        // player death by asteroid
         if([self.spaceship intersectsNode:rock]) {
             [self.spaceship removeFromParent];
             [rock removeFromParent];
@@ -274,6 +335,22 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
             if([missile intersectsNode:rock]) {
                 [missile removeFromParent];
                 [rock removeFromParent];
+                *stop = YES;
+            }
+        }];
+
+    }];
+    
+    [self enumerateChildNodesWithName:@"enemy" usingBlock:^(SKNode *enemy, BOOL *stop) {
+        if([self.spaceship intersectsNode:enemy]) {
+            [self.spaceship removeFromParent];
+            [enemy removeFromParent];
+        }
+        // missile hit
+        [self enumerateChildNodesWithName:@"missile" usingBlock:^(SKNode *missile, BOOL *stop) {
+            if([missile intersectsNode:enemy]) {
+                [missile removeFromParent];
+                [enemy removeFromParent];
                 *stop = YES;
             }
         }];
@@ -300,8 +377,13 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     [self movePlayer];
     [self scrollBackground];
     
+    if (currentTime - self.lastShotFireTime > 0.2 && self.fireAction == YES) {
+        [self shoot];
+        self.lastShotFireTime = currentTime;
+    }
+    
     if (arc4random_uniform(1000) <= 15) {
-        [self dropAsteroid];
+        [self dropThing];
     }
     
     [self checkCollisions];
@@ -309,5 +391,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     self.lastUpdateTime = currentTime;
 
 }
+
+
 
 @end
