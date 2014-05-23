@@ -8,6 +8,7 @@
 
 #import "SpaceshipScene.h"
 #import "StarField.h"
+#import "PocketSVG.h"
 
 #define kScoreHudName @"scoreHud"
 
@@ -45,7 +46,7 @@
     self.backgroundColor = [SKColor blackColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
     self.anchorPoint = CGPointMake(0, 0);
-        [self setBg1:[self newBackground]];
+    [self setBg1:[self newBackground]];
     [self setBg2:[self newBackground]];
     
     self.bg1.anchorPoint = CGPointZero;
@@ -60,9 +61,6 @@
     
     StarField *starField = [StarField node];
     [self addChild:starField];
-    
-    
-
     
     [self setSpaceship:[self newSpaceship]];
     self.spaceship.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame)-300);
@@ -80,7 +78,7 @@
 -(void)adjustScoreBy:(NSUInteger)points {
     self.score += points;
     SKLabelNode* score = (SKLabelNode*)[self childNodeWithName:kScoreHudName];
-    score.text = [NSString stringWithFormat:@"Score: %04u", self.score];
+    score.text = [NSString stringWithFormat:@"Score: %04lu", (unsigned long)self.score];
 }
 
 -(void)setupHud {
@@ -90,7 +88,7 @@
     score.fontSize = 15;
     //2
     score.fontColor = [SKColor greenColor];
-    score.text = [NSString stringWithFormat:@"Score: %04lu", 0];
+    score.text = [NSString stringWithFormat:@"Score: %04d", 0];
     //3
     score.position = CGPointMake(20 + score.frame.size.width/2, self.size.height - (20 + score.frame.size.height/2));
     [self addChild:score];
@@ -256,18 +254,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 
 - (CGPathRef)buildEnemyShipMovementPath
 {
-    CGMutablePathRef path = CGPathCreateMutable();
-    CGPathMoveToPoint(path, NULL,0.5, -0.5);
-    CGPathAddCurveToPoint(path, NULL, 0.5,-0.5 , 4.55, -29.48, -2.5, -59.5);
-    CGPathAddCurveToPoint(path, NULL, -9.55,-89.525 , -43.32, -115.43, -27.5, -154.5);
-    CGPathAddCurveToPoint(path, NULL, -11.68, -193.57, 17.28, -186.95, 30.5, -243.5);
-    CGPathAddCurveToPoint(path, NULL, 43.72, -300.05, -47.71, -335.76,-52.5, -379.5);
-    CGPathAddCurveToPoint(path, NULL, -57.29, -423.24, 4.55,-8.14, -482.45, -449.5);
-    CGPathAddCurveToPoint(path, NULL, 117.14, -416.55, 52.25, -308.62,-5.5, -348.5);
-    CGPathAddCurveToPoint(path, NULL, -63.25, -388.38, -14.48, -457.43,10.5, -494.5);
-    CGPathAddCurveToPoint(path, NULL, 23.74, -514.16, 6.93, -537.57, 0.5, -559.5);
-    CGPathAddCurveToPoint(path, NULL, -5.2, -578.93, -2.5, -644.5, -2.5, -644.5);
-    CGPathAddCurveToPoint(path, NULL, 0.5,-0.5 , 4.55, -29.48, -2.5, -59.5);
+    CGPathRef path = [PocketSVG pathFromSVGFileNamed:@"enemy1path"];
     return path;
 }
 

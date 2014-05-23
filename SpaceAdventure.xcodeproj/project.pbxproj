@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		911776FE192F095B002FA105 /* PocketSVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 911776FD192F095B002FA105 /* PocketSVG.m */; };
+		91177702192F09A9002FA105 /* BezierCurve1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 911776FF192F09A9002FA105 /* BezierCurve1.svg */; };
+		91177703192F09A9002FA105 /* BezierCurve2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 91177700192F09A9002FA105 /* BezierCurve2.svg */; };
+		91177704192F09A9002FA105 /* BezierCurve3.svg in Resources */ = {isa = PBXBuildFile; fileRef = 91177701192F09A9002FA105 /* BezierCurve3.svg */; };
+		91177706192F0B23002FA105 /* enemy1path.svg in Resources */ = {isa = PBXBuildFile; fileRef = 91177705192F0B23002FA105 /* enemy1path.svg */; };
 		91831D3119286D440053917A /* StarField.m in Sources */ = {isa = PBXBuildFile; fileRef = 91831D3019286D440053917A /* StarField.m */; };
 		91C02F3C191EBC6700715633 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C02F3B191EBC6700715633 /* Player.m */; };
 		91CBE1C11919D81F00AB2607 /* SpaceshipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CBE1C01919D81F00AB2607 /* SpaceshipScene.m */; };
@@ -46,6 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		911776FC192F095B002FA105 /* PocketSVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PocketSVG.h; sourceTree = "<group>"; };
+		911776FD192F095B002FA105 /* PocketSVG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PocketSVG.m; sourceTree = "<group>"; };
+		911776FF192F09A9002FA105 /* BezierCurve1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BezierCurve1.svg; sourceTree = "<group>"; };
+		91177700192F09A9002FA105 /* BezierCurve2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BezierCurve2.svg; sourceTree = "<group>"; };
+		91177701192F09A9002FA105 /* BezierCurve3.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BezierCurve3.svg; sourceTree = "<group>"; };
+		91177705192F0B23002FA105 /* enemy1path.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = enemy1path.svg; sourceTree = "<group>"; };
 		91831D2F19286D440053917A /* StarField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarField.h; sourceTree = "<group>"; };
 		91831D3019286D440053917A /* StarField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarField.m; sourceTree = "<group>"; };
 		91C02F3A191EBC6700715633 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -107,6 +118,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		911776FB192F087E002FA105 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				911776FC192F095B002FA105 /* PocketSVG.h */,
+				911776FD192F095B002FA105 /* PocketSVG.m */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
 		91CBE1C31919E91500AB2607 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +238,10 @@
 		971FE9D9191C3A5B00B7DF45 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				91177705192F0B23002FA105 /* enemy1path.svg */,
+				911776FF192F09A9002FA105 /* BezierCurve1.svg */,
+				91177700192F09A9002FA105 /* BezierCurve2.svg */,
+				91177701192F09A9002FA105 /* BezierCurve3.svg */,
 				9732E46C192EDB76004365A8 /* shootingstar.png */,
 				979D8907191D8DE3004F4114 /* StarMap4.jpg */,
 				979D8905191D8A29004F4114 /* StarMap3.jpg */,
@@ -317,7 +341,10 @@
 				91D02C3E1916B4CA00B6671D /* Spaceship.png in Resources */,
 				91D02C401916B4CA00B6671D /* Images.xcassets in Resources */,
 				91D02C2E1916B4CA00B6671D /* InfoPlist.strings in Resources */,
+				91177706192F0B23002FA105 /* enemy1path.svg in Resources */,
+				91177704192F09A9002FA105 /* BezierCurve3.svg in Resources */,
 				97E9AE83191D407F00355E0B /* Zombie.png in Resources */,
+				91177703192F09A9002FA105 /* BezierCurve2.svg in Resources */,
 				971FE9D8191C2ED600B7DF45 /* StarBackground.jpg in Resources */,
 				97F37F1F192FDA1400DC687A /* spark.png in Resources */,
 				979D8904191D89AB004F4114 /* StarMap2.jpg in Resources */,
@@ -325,6 +352,7 @@
 				97F37F1E192FDA1400DC687A /* MyParticle.sks in Resources */,
 				9732E46D192EDB76004365A8 /* shootingstar.png in Resources */,
 				979D8908191D8DE3004F4114 /* StarMap4.jpg in Resources */,
+				91177702192F09A9002FA105 /* BezierCurve1.svg in Resources */,
 				91D02C361916B4CA00B6671D /* MainMenu.xib in Resources */,
 				979D8906191D8A29004F4114 /* StarMap3.jpg in Resources */,
 			);
@@ -350,6 +378,7 @@
 				91CBE1C11919D81F00AB2607 /* SpaceshipScene.m in Sources */,
 				91D02C3B1916B4CA00B6671D /* SpriteAppDelegate.m in Sources */,
 				91D02C381916B4CA00B6671D /* TitleScene.m in Sources */,
+				911776FE192F095B002FA105 /* PocketSVG.m in Sources */,
 				91C02F3C191EBC6700715633 /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
