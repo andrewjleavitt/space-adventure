@@ -31,6 +31,8 @@
 		979D8906191D8A29004F4114 /* StarMap3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 979D8905191D8A29004F4114 /* StarMap3.jpg */; };
 		979D8908191D8DE3004F4114 /* StarMap4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 979D8907191D8DE3004F4114 /* StarMap4.jpg */; };
 		97E9AE83191D407F00355E0B /* Zombie.png in Resources */ = {isa = PBXBuildFile; fileRef = 97E9AE82191D407F00355E0B /* Zombie.png */; };
+		97F37F1E192FDA1400DC687A /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 97F37F1C192FDA1400DC687A /* MyParticle.sks */; };
+		97F37F1F192FDA1400DC687A /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 97F37F1D192FDA1400DC687A /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		979D8905191D8A29004F4114 /* StarMap3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = StarMap3.jpg; sourceTree = "<group>"; };
 		979D8907191D8DE3004F4114 /* StarMap4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = StarMap4.jpg; sourceTree = "<group>"; };
 		97E9AE82191D407F00355E0B /* Zombie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zombie.png; sourceTree = "<group>"; };
+		97F37F1C192FDA1400DC687A /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = MyParticle.sks; path = ../MyParticle.sks; sourceTree = "<group>"; };
+		97F37F1D192FDA1400DC687A /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = ../spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,7 @@
 		91D02C291916B4CA00B6671D /* SpaceAdventure */ = {
 			isa = PBXGroup;
 			children = (
+				97F37F20192FDCC000DC687A /* Particles */,
 				971FE9D9191C3A5B00B7DF45 /* Assets */,
 				91CBE1C81919EF4500AB2607 /* Sprites */,
 				91D02C351916B4CA00B6671D /* MainMenu.xib */,
@@ -222,6 +227,15 @@
 				91D02C3D1916B4CA00B6671D /* Spaceship.png */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		97F37F20192FDCC000DC687A /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				97F37F1C192FDA1400DC687A /* MyParticle.sks */,
+				97F37F1D192FDA1400DC687A /* spark.png */,
+			);
+			name = Particles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,8 +319,10 @@
 				91D02C2E1916B4CA00B6671D /* InfoPlist.strings in Resources */,
 				97E9AE83191D407F00355E0B /* Zombie.png in Resources */,
 				971FE9D8191C2ED600B7DF45 /* StarBackground.jpg in Resources */,
+				97F37F1F192FDA1400DC687A /* spark.png in Resources */,
 				979D8904191D89AB004F4114 /* StarMap2.jpg in Resources */,
 				91D02C341916B4CA00B6671D /* Credits.rtf in Resources */,
+				97F37F1E192FDA1400DC687A /* MyParticle.sks in Resources */,
 				9732E46D192EDB76004365A8 /* shootingstar.png in Resources */,
 				979D8908191D8DE3004F4114 /* StarMap4.jpg in Resources */,
 				91D02C361916B4CA00B6671D /* MainMenu.xib in Resources */,

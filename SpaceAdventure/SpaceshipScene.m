@@ -70,13 +70,12 @@
     [self addChild:self.spaceship];
     [self setupHud];
     
-//    SKAction *makeRocks = [SKAction sequence: @[
-//                                                [SKAction performSelector:@selector(addRock) onTarget:self],
-//                                                [SKAction waitForDuration:0.10 withRange:0.15]
-//                                                ]];
-//    [self runAction: [SKAction repeatActionForever:makeRocks]];
+    SKAction *makeRocks = [SKAction sequence: @[
+                                                [SKAction performSelector:@selector(addRock) onTarget:self],
+                                                [SKAction waitForDuration:0.10 withRange:0.15]
+                                                ]];
+    [self runAction: [SKAction repeatActionForever:makeRocks]];
 }
-
 
 -(void)adjustScoreBy:(NSUInteger)points {
     self.score += points;
@@ -118,6 +117,11 @@
     light2b.position = CGPointMake(28.0, -6.0);
     [hull addChild:light2b];
     
+    SKEmitterNode *thrust = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle]
+                                                                        pathForResource:@"MyParticle" ofType:@"sks"]];
+    thrust.position = CGPointMake(0, -30);
+    [hull addChild:thrust];
+    
     hull.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:hull.size];
     
     hull.physicsBody.dynamic = NO;
@@ -141,6 +145,11 @@
     enemyHull.name = @"enemyHull";
     enemyHull.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:enemyHull.size];
     enemyHull.physicsBody.dynamic = NO;
+    
+    SKEmitterNode *thrust = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle]
+                                                                        pathForResource:@"MyParticle" ofType:@"sks"]];
+    thrust.position = CGPointMake(0, -30);
+    [enemyHull addChild:thrust];
     
     return enemyHull;
 }
@@ -175,7 +184,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 {
     SKSpriteNode *rock = [[SKSpriteNode alloc] initWithColor:[SKColor brownColor] size:CGSizeMake(8,8)];
     rock.position = CGPointMake(skRand(-512, self.size.width), self.size.height-50);
-    rock.name = @"rock";
+    rock.name = @"meteor";
     rock.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:rock.size];
     rock.physicsBody.usesPreciseCollisionDetection = YES;
     rock.zPosition = 2;
@@ -185,6 +194,9 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 - (SKSpriteNode *) newRock:(CGFloat)size {
 //    SKSpriteNode *rock = [[SKSpriteNode alloc] initWithColor:[SKColor brownColor] size:CGSizeMake(size,size)];
     SKSpriteNode *rock = [SKSpriteNode spriteNodeWithImageNamed:@"Zombie"];
+//    rock.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:rock.size];
+//    rock.physicsBody.usesPreciseCollisionDetection = YES;
+
     rock.size = CGSizeMake(size, size);
     return rock;
 }
@@ -264,7 +276,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     missile.name = @"missile";
     missile.position = self.spaceship.position;
     [self addChild:missile];
-    SKAction *fly = [SKAction moveByX:0 y:self.size.height+missile.size.height duration:0.5];
+    SKAction *fly = [SKAction moveByX:30 y:self.size.height+missile.size.height duration:0.5];
     SKAction *remove = [SKAction removeFromParent];
     SKAction *fireAndRemove = [SKAction sequence:@[fly, remove]] ;
     [missile runAction:fireAndRemove];
