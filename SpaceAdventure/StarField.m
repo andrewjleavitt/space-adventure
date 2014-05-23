@@ -18,7 +18,7 @@
                 [weakSelf launchStar];
             }
         }];
-        SKAction *delay = [SKAction waitForDuration:0.01];
+        SKAction *delay = [SKAction waitForDuration:0.001];
         SKAction *updateLoop = [SKAction sequence:@[delay, update]];
         [self runAction:[SKAction repeatActionForever:updateLoop]];
     }

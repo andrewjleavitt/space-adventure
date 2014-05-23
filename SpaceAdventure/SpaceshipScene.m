@@ -9,6 +9,8 @@
 #import "SpaceshipScene.h"
 #import "StarField.h"
 
+#define kScoreHudName @"scoreHud"
+
 @interface SpaceshipScene ()
 @property BOOL contentCreated;
 @property (nonatomic) BOOL moveForward;
@@ -24,6 +26,7 @@
 @property (nonatomic) SKSpriteNode* bg1;
 @property (nonatomic) SKSpriteNode* bg2;
 @property (nonatomic) NSNumber* scrollSpeed;
+@property NSUInteger score;
 
 @end
 
@@ -57,12 +60,15 @@
     
     StarField *starField = [StarField node];
     [self addChild:starField];
+    
+    
 
     
     [self setSpaceship:[self newSpaceship]];
     self.spaceship.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame)-300);
     self.spaceship.zPosition = 100;
     [self addChild:self.spaceship];
+    [self setupHud];
     
 //    SKAction *makeRocks = [SKAction sequence: @[
 //                                                [SKAction performSelector:@selector(addRock) onTarget:self],
@@ -70,6 +76,27 @@
 //                                                ]];
 //    [self runAction: [SKAction repeatActionForever:makeRocks]];
 }
+
+
+-(void)adjustScoreBy:(NSUInteger)points {
+    self.score += points;
+    SKLabelNode* score = (SKLabelNode*)[self childNodeWithName:kScoreHudName];
+    score.text = [NSString stringWithFormat:@"Score: %04u", self.score];
+}
+
+-(void)setupHud {
+    SKLabelNode* score = [SKLabelNode labelNodeWithFontNamed:@"Courier"];
+    //1
+    score.name = kScoreHudName;
+    score.fontSize = 15;
+    //2
+    score.fontColor = [SKColor greenColor];
+    score.text = [NSString stringWithFormat:@"Score: %04lu", 0];
+    //3
+    score.position = CGPointMake(20 + score.frame.size.width/2, self.size.height - (20 + score.frame.size.height/2));
+    [self addChild:score];
+}
+
 
 - (SKSpriteNode *)newSpaceship {
     //    SKSpriteNode *hull = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
@@ -97,6 +124,7 @@
     hull.name = @"hull";
     return hull;
 }
+
 
 - (SKSpriteNode *) newEnemySpaceShip {
     SKSpriteNode *enemyHull = [[SKSpriteNode alloc] initWithColor:[SKColor redColor] size:CGSizeMake(64, 16)];
@@ -228,7 +256,6 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     CGPathAddCurveToPoint(path, NULL, 23.74, -514.16, 6.93, -537.57, 0.5, -559.5);
     CGPathAddCurveToPoint(path, NULL, -5.2, -578.93, -2.5, -644.5, -2.5, -644.5);
     CGPathAddCurveToPoint(path, NULL, 0.5,-0.5 , 4.55, -29.48, -2.5, -59.5);
-
     return path;
 }
 
@@ -336,6 +363,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
                 [missile removeFromParent];
                 [rock removeFromParent];
                 *stop = YES;
+                [self adjustScoreBy:1];
             }
         }];
 
@@ -352,6 +380,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
                 [missile removeFromParent];
                 [enemy removeFromParent];
                 *stop = YES;
+                [self adjustScoreBy:10];
             }
         }];
 
